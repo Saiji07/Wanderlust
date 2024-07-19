@@ -1,3 +1,1 @@
-app.get("/", (req,res)=>{
-//     res.send("working");
-// });
+const dbURL=process.env.DB_URL;
