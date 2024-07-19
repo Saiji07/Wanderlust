@@ -11,3 +11,7 @@ const marker1 = new mapboxgl.Marker({color:"red"})
               .setHTML(`<h4>${listing.location}</h4> <p>Exact Location Will be shared after Booking</p>`)
         )
         .addTo(map);
+
+        window.addEventListener('resize', () => {
+            map.resize();
+        });
