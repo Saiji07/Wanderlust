@@ -14,4 +14,17 @@ const marker1 = new mapboxgl.Marker({color:"red"})
 
         window.addEventListener('resize', () => {
             map.resize();
+            if (window.innerWidth <= 767) {
+                map.setZoom(12);
+            } else {
+                map.setZoom(9);
+            }
         });
+
+        map.on('load', () => {
+            if (window.innerWidth <= 767) {
+                map.setZoom(12);
+                map.setCenter(listing.geometry.coordinates);
+            }
+        });
+
